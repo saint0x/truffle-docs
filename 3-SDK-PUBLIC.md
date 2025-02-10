@@ -21,102 +21,87 @@ import truffle
     icon="tablecells.badge.ellipsis"  # Uses SF Symbols
 )
 @truffle.args(path="The path to the CSV file to analyze")
-def AnalyzeCSV(self, path: str) -> Dict[str, Any]:
-    try:
-        if not os.path.exists(path):
-            return {"error": f"File '{path}' not found"}
-        with open(path, 'r') as file:
-            df = pd.read_csv(path)
-            return {
-                "path": path,
-                "columns": df.columns.tolist(),
-                "shape": df.shape,
-                "dtypes": df.dtypes.apply(lambda x: x.name).to_dict()
-            }
-    except Exception as e:
-        return truffle.ReportError(e)
-```
-
-### 2. App Metadata
-
-Define your app's metadata:
-
-```python
-class MyApp:
-    def __init__(self):
-        self.metadata = truffle.AppMetadata(
-            fullname="My App",        # User-facing name
-            description="Description", # User-facing description
-            name="myapp",             # Internal name
-            goal="App's goal",        # Goal for AI agents
-            icon_url="https://..."    # 512x512 PNG icon URL
-        )
-```
-
-### 3. AI Integration
-
-The SDK provides tools for AI model integration:
-
-```python
-@truffle.tool(description="AI-powered analysis")
-def AnalyzeText(self, text: str) -> str:
-    # Build prompt
-    prompt = truffle.PromptBuilder(
-        system="Analyze the following text"
-    ).Add(text)
-    
-    # Define response format
-    schema = {
-        "type": "object",
-        "properties": {
-            "analysis": {"type": "string"}
-        }
-    }
-    
-    # Make inference request
-    request = truffle.GenerateRequest(
-        id="text_analysis",
-        prompt=prompt,
-        schema=schema,
-        temperature=0.75
-    )
-    
-    # Get response
-    response = truffle.InferSync(request, model="yang")
-    return json.loads(response)["analysis"]
-```
-
-### 4. Vision Processing
-
-Convert images to structured text:
-
-```python
-@truffle.tool("Gather data as a CSV or Markdown table")
-@truffle.args(as_markdown="Return the data as a markdown table instead of a CSV")
-def ProcessTableImage(self, as_markdown: bool) -> str:
-    try:
-        # Capture image data
-        screenshot = get_screenshot()  # Your screenshot logic
+def analyze_csv(path: str) -> Dict[str, Any]:
+    if not os.path.exists(path):
+        return {"error": f"File '{path}' not found"}
         
-        # Convert to table format
-        format_type = "Markdown" if as_markdown else "CSV"
-        return truffle.Vision(
-            f"Convert this data to a {format_type} table",
-            base64_image=screenshot
-        )
-    except Exception as e:
-        return truffle.ReportError(e)
+    df = pd.read_csv(path)
+    return {
+        "path": path,
+        "columns": df.columns.tolist(),
+        "shape": df.shape,
+        "dtypes": df.dtypes.apply(lambda x: x.name).to_dict()
+    }
 ```
 
-### 5. File Handling
+### 2. Model Management
 
-Handle file outputs with `TruffleFile`:
+Access and manage available models:
 
 ```python
-@truffle.tool(description="Generate report")
-def BuildReport(self, title: str, data: Dict[str, Any]) -> truffle.TruffleFile:
-    content = f"# {title}\n```json\n{data}\n```"
-    return truffle.TruffleFile("report.md", content)
+# Get available models
+models = truffle.get_models()
+```
+
+### 3. Document Processing
+
+Process and embed documents for semantic search:
+
+```python
+# Embed documents and find similarities
+results = truffle.query_embed(
+    query="What is machine learning?",
+    documents=["doc1", "doc2", "doc3"]
+)
+```
+
+### 4. Perplexity Integration
+
+Leverage Perplexity's powerful search capabilities:
+
+```python
+@truffle.tool(description="Search using Perplexity")
+def search_info(query: str) -> str:
+    return truffle.perplexity_search(
+        query=query,
+        model="sonar",  # Available models: sonar, sonar-pro, sonar-reasoning
+        system_prompt="You are a helpful assistant"
+    )
+```
+
+### 5. Streaming Inference
+
+Stream model responses in real-time:
+
+```python
+@truffle.tool(description="Generate text with streaming")
+def generate_text(prompt: str) -> str:
+    response = ""
+    for token in truffle.infer(
+        prompt=prompt,
+        temperature=0.7,
+        max_tokens=1000
+    ):
+        response += token
+    return response
+```
+
+### 6. User Interaction
+
+Interact with users during tool execution:
+
+```python
+@truffle.tool(description="Interactive tool example")
+def interactive_tool() -> str:
+    # Show progress updates
+    truffle.tool_update("Processing your request...")
+    
+    # Get user input
+    response = truffle.ask_user(
+        message="What would you like to analyze?",
+        reason="Need input to proceed with analysis"
+    )
+    return f"Processing: {response['response']}"
 ```
 
 ## Core Components
@@ -132,21 +117,12 @@ def BuildReport(self, title: str, data: Dict[str, Any]) -> truffle.TruffleFile:
 import truffle
 
 # Available features
-truffle.AppMetadata      # App metadata definition
-truffle.TruffleFile     # File output handling
-truffle.PromptBuilder   # AI prompt construction
-truffle.GenerateRequest # Inference request creation
-truffle.InferSync      # Model inference execution
-truffle.Vision         # Image-to-text conversion
-truffle.ReportError    # Error reporting
-```
-
-### 3. Error Handling
-```python
-try:
-    # Implementation
-except Exception as e:
-    return truffle.ReportError(e)
+truffle.get_models()      # Get available models
+truffle.query_embed()     # Document embedding and search
+truffle.perplexity_search() # Perplexity integration
+truffle.infer()          # Streaming inference
+truffle.tool_update()    # Real-time progress updates
+truffle.ask_user()       # User interaction
 ```
 
 <Note>
