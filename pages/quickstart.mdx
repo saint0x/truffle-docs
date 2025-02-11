@@ -1,0 +1,140 @@
+---
+title: 'Quick Start Guide'
+description: 'Build your first Truffle app in minutes'
+---
+
+<Steps>
+  <Step title="Installation">
+    <div className="ml-4 text-sm text-gray-500">
+      Install the Truffle SDK using pip:
+    </div>
+    ```bash
+    pip install https://github.com/deepshard/truffle-sdk-public/releases/download/v0.6.5/truffle_sdk-0.6.4-py3-none-any.whl
+    ```
+  </Step>
+
+  <Step title="Create Your App">
+    <div className="ml-4 text-sm text-gray-500">
+      Initialize a new Truffle app:
+    </div>
+    ```bash
+    truffle init MyFirstApp
+    cd MyFirstApp
+    ```
+  </Step>
+
+  <Step title="Implement Your Tool">
+    <div className="ml-4 text-sm text-gray-500">
+      Open `main.py` and implement your tool:
+    </div>
+    ```python
+    import truffle
+    import pandas as pd
+    import os
+    from typing import Dict, Any
+
+    @truffle.tool(
+        description="Process data from a CSV file",
+        icon="doc.text.magnifyingglass"  # Uses SF Symbols
+    )
+    @truffle.args(
+        path="Path to the CSV file to analyze"
+    )
+    def analyze_csv(path: str) -> Dict[str, Any]:
+        """
+        Analyze a CSV file and return its metadata.
+        
+        Args:
+            path: Path to the CSV file
+            
+        Returns:
+            Dict containing file metadata
+        """
+        if not os.path.exists(path):
+            return {"error": f"File not found: {path}"}
+            
+        df = pd.read_csv(path)
+        return {
+            "path": path,
+            "columns": df.columns.tolist(),
+            "shape": df.shape,
+            "dtypes": df.dtypes.apply(lambda x: x.name).to_dict()
+        }
+
+    if __name__ == "__main__":
+        app = truffle.TruffleApp(analyze_csv)
+        app.launch()
+    ```
+  </Step>
+
+  <Step title="Build and Run">
+    <div className="ml-4 text-sm text-gray-500">
+      Build your app and get ready to use it:
+    </div>
+    ```bash
+    truffle build
+    ```
+  </Step>
+</Steps>
+
+## Project Structure
+
+<Card>
+  Your app contains these key files:
+</Card>
+
+```
+MyFirstApp/
+├── main.py           # Your app code
+├── manifest.json     # App metadata (auto-generated)
+└── requirements.txt  # Dependencies
+```
+
+## Key Concepts
+
+<AccordionGroup>
+  <Accordion title="Tool Definition">
+    <div className="ml-4 text-sm text-gray-500">
+      Define your tools using decorators and type hints for automatic validation and documentation.
+    </div>
+    
+    - `@truffle.tool`: Main decorator with description and icon
+    - `@truffle.args`: Document parameters
+    - Type hints for validation
+    - Docstrings for documentation
+  </Accordion>
+
+  <Accordion title="Core Features">
+    <div className="ml-4 text-sm text-gray-500">
+      The SDK provides these essential capabilities:
+    </div>
+    
+    - Tool definition with `@truffle.tool` and `@truffle.args`
+    - Model management with `get_models()`
+    - Document parsing and embeddings via `query_embed()`
+    - Perplexity integration with `perplexity_search()`
+    - Streaming inference with `infer()`
+    - Real-time tool updates with `tool_update()`
+    - User interaction with `ask_user()`
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Documentation" icon="book">
+    Read the [SDK Documentation](./SDK-PUBLIC.md) for detailed explanations
+  </Card>
+  
+  <Card title="Examples" icon="code">
+    Check out example apps in our [GitHub repository](https://github.com/deepshard/truffle-sdk-public/examples)
+  </Card>
+  
+  <Card title="Community" icon="users">
+    Join our [Discord community](https://discord.gg/truffle) for support
+  </Card>
+  
+  <Card title="Troubleshooting" icon="wrench">
+    Check our [troubleshooting guide](./TROUBLESHOOTING.md) for common issues
+  </Card>
+</CardGroup> 

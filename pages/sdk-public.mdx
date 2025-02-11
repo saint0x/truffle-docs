@@ -1,0 +1,156 @@
+---
+title: 'Truffle SDK'
+description: 'Technical documentation for building powerful, composable AI applications'
+---
+
+<Card>
+  The Truffle SDK transforms standard Python code into powerful, distributed tools that any agent can discover and use.
+</Card>
+
+## Core Features
+
+### 1. Tool Definition
+
+<div className="ml-4 text-sm text-gray-500">
+  Tools are defined using the `@truffle.tool` decorator:
+</div>
+
+```python
+import truffle
+
+@truffle.tool(
+    description="Returns metadata given a path to a CSV file",
+    icon="tablecells.badge.ellipsis"  # Uses SF Symbols
+)
+@truffle.args(path="The path to the CSV file to analyze")
+def analyze_csv(path: str) -> Dict[str, Any]:
+    if not os.path.exists(path):
+        return {"error": f"File '{path}' not found"}
+        
+    df = pd.read_csv(path)
+    return {
+        "path": path,
+        "columns": df.columns.tolist(),
+        "shape": df.shape,
+        "dtypes": df.dtypes.apply(lambda x: x.name).to_dict()
+    }
+```
+
+### 2. Model Management
+
+<div className="ml-4 text-sm text-gray-500">
+  Access and manage available models:
+</div>
+
+```python
+# Get available models
+models = truffle.get_models()
+```
+
+### 3. Document Processing
+
+<div className="ml-4 text-sm text-gray-500">
+  Process and embed documents for semantic search:
+</div>
+
+```python
+# Embed documents and find similarities
+results = truffle.query_embed(
+    query="What is machine learning?",
+    documents=["doc1", "doc2", "doc3"]
+)
+```
+
+### 4. Perplexity Integration
+
+<div className="ml-4 text-sm text-gray-500">
+  Leverage Perplexity's powerful search capabilities:
+</div>
+
+```python
+@truffle.tool(description="Search using Perplexity")
+def search_info(query: str) -> str:
+    return truffle.perplexity_search(
+        query=query,
+        model="sonar",  # Available models: sonar, sonar-pro, sonar-reasoning
+        system_prompt="You are a helpful assistant"
+    )
+```
+
+### 5. Streaming Inference
+
+<div className="ml-4 text-sm text-gray-500">
+  Stream model responses in real-time:
+</div>
+
+```python
+@truffle.tool(description="Generate text with streaming")
+def generate_text(prompt: str) -> str:
+    response = ""
+    for token in truffle.infer(
+        prompt=prompt,
+        temperature=0.7,
+        max_tokens=1000
+    ):
+        response += token
+    return response
+```
+
+### 6. User Interaction
+
+<div className="ml-4 text-sm text-gray-500">
+  Interact with users during tool execution:
+</div>
+
+```python
+@truffle.tool(description="Interactive tool example")
+def interactive_tool() -> str:
+    # Show progress updates
+    truffle.tool_update("Processing your request...")
+    
+    # Get user input
+    response = truffle.ask_user(
+        message="What would you like to analyze?",
+        reason="Need input to proceed with analysis"
+    )
+    return f"Processing: {response['response']}"
+```
+
+## Core Components
+
+### Decorators
+
+<div className="ml-4 text-sm text-gray-500">
+  Essential decorators for defining and documenting tools:
+</div>
+
+<div className="ml-4 mb-8">
+  ```python
+  @truffle.tool(description="...", icon="...")  # Define a tool
+  @truffle.args(param="description")            # Document parameters
+  ```
+</div>
+
+### SDK Features
+
+<div className="ml-4 text-sm text-gray-500">
+  Core SDK functions available for tool development:
+</div>
+
+<div className="ml-4">
+  ```python
+  import truffle
+
+  # Available features
+  truffle.get_models()          # Get available models
+  truffle.query_embed()         # Document embedding and search
+  truffle.perplexity_search()   # Perplexity integration
+  truffle.infer()              # Streaming inference
+  truffle.tool_update()        # Real-time progress updates
+  truffle.ask_user()           # User interaction
+  ```
+</div>
+
+<Note>
+  For quick start guide and basic usage, see our [Quick Start Guide](./quickstart).
+</Note> 

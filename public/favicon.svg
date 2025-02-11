@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo { fill: #0D9373; }
+    @media (prefers-color-scheme: dark) {
+      .logo { fill: #07C983; }
+    }
+  </style>
+  
+  <!-- Truffle Icon -->
+  <path class="logo" d="M16 4 C16 4, 28 12, 28 20 C28 28, 4 28, 4 20 C4 12, 16 4, 16 4 Z"/>
+</svg> 

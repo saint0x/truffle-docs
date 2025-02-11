@@ -1,0 +1,344 @@
+---
+title: 'Introduction to Truffle'
+---
+
+<Card>
+  Truffle is a new computing paradigm that brings blazing fast AI inference and agentic functionality directly to you, locally.
+</Card>
+
+## Platform Overview
+
+<CardGroup cols={3}>
+  <Card title="Local Orb">
+    Custom hardware for secure AI inference.
+  </Card>
+  <Card title="Powerful Inference">
+    Agentic computing at ridiculous speeds.
+  </Card>
+  <Card title="Agent Registry">
+    Decentralized marketplace for agentic transactions.
+  </Card>
+</CardGroup>
+
+## Core Architecture
+
+At its heart, Truffle operates on four fundamental primitives:
+
+<Frame type="glass" width="800" height="200">
+  ```mermaid
+  graph TD
+    classDef default fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,stroke-width:2px,rx:8
+    classDef connection stroke:#7DBFEF,stroke-width:2px
+    
+    A[Prompt Bar & Task Window] -->|I/O| B[Model Mixture]
+    B -->|Processing| C[Shared Context]
+    C -->|State| D[Containerized Apps]
+    D -->|Feedback| A
+    
+    linkStyle default stroke:#7DBFEF,stroke-width:2px
+    style A fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+    style B fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+    style C fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+    style D fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+  ```
+</Frame>
+
+<Tabs>
+  <Tab title="Prompt Bar & Task Window">
+    <div className="ml-4 text-sm text-gray-500">
+      Natural language interface for user input, real-time task visualization, and seamless interaction flow.
+    </div>
+  </Tab>
+  
+  <Tab title="Model Mixture">
+    <div className="ml-4 text-sm text-gray-500">
+      Specialized models optimized for different tasks and edge performance.
+    </div>
+    
+    - Specialized models for different tasks
+    - Optimized for edge device performance
+    - Efficient resource utilization
+  </Tab>
+  
+  <Tab title="Shared Context">
+    <div className="ml-4 text-sm text-gray-500">
+      Sophisticated memory and state management across the system.
+    </div>
+    
+    - Cross-model memory management
+    - Persistent state tracking
+    - Efficient context sharing
+  </Tab>
+  
+  <Tab title="Containerized Applications">
+    <div className="ml-4 text-sm text-gray-500">
+      Secure and isolated execution environments for tools.
+    </div>
+    
+    - Sandboxed execution environments
+    - Tool-based interaction model
+    - Secure and isolated operations
+  </Tab>
+</Tabs>
+
+## The Agent Loop
+
+Unlike traditional language models, Truffle operates on an action-based paradigm:
+
+<Frame type="glass" width="800" height="200">
+  ```mermaid
+  graph LR
+    classDef default fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,stroke-width:2px,rx:8
+    classDef connection stroke:#7DBFEF,stroke-width:2px
+    
+    A[User Request] -->|Initial State| B[Model Selection]
+    B -->|Action Choice| C[Tool Execution]
+    C -->|Environment Update| D[State Transition]
+    D -->|New Context| B
+    
+    linkStyle default stroke:#7DBFEF,stroke-width:2px
+    style A fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+    style B fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+    style C fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+    style D fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+  ```
+</Frame>
+
+<Steps>
+  <Step title="User Request">
+    <div className="ml-4 text-sm text-gray-500">
+      User provides a request
+    </div>
+  </Step>
+  <Step title="Model Selection">
+    <div className="ml-4 text-sm text-gray-500">
+      Model selects appropriate actions
+    </div>
+  </Step>
+  <Step title="Tool Execution">
+    <div className="ml-4 text-sm text-gray-500">
+      Actions execute in controlled environments
+    </div>
+  </Step>
+  <Step title="State Update">
+    <div className="ml-4 text-sm text-gray-500">
+      System updates based on results
+    </div>
+  </Step>
+  <Step title="Loop Continuation">
+    <div className="ml-4 text-sm text-gray-500">
+      Loop continues until task completion
+    </div>
+  </Step>
+</Steps>
+
+## Model Architecture
+
+Truffle employs a mixture-of-models approach, with each model specialized for specific tasks:
+
+<AccordionGroup>
+  <Accordion title="Action and Reasoning">
+    - Core decision-making engine
+    - Action selection and planning
+    - Argument completion and validation
+    - Specialized sub-behaviors for different tasks
+  </Accordion>
+  
+  <Accordion title="Vision Processing">
+    - Image interpretation and analysis
+    - OCR capabilities
+    - Visual content understanding
+    - Multi-modal integration
+  </Accordion>
+  
+  <Accordion title="Generative UI">
+    - Dynamic interface generation
+    - Task and action titling
+    - Execution summaries
+    - Real-time classification
+  </Accordion>
+</AccordionGroup>
+
+## Technical Innovation
+
+Several key innovations power Truffle's capabilities:
+
+<Tabs>
+  <Tab title="Action-Based Processing">
+    ```python
+    # Traditional LLM approach
+    response = model.generate(prompt)
+
+    # Truffle's action-based approach
+    while not task.completed:
+        action = model.select_next_action(context)
+        result = environment.execute(action)
+        context.update(result)
+    ```
+  </Tab>
+  
+  <Tab title="Optimized Token Usage">
+    - Special tokens for high-level actions
+    - Constrained classification space
+    - Jump-forward decoding for structured output
+    - Reduced semantic collisions
+  </Tab>
+  
+  <Tab title="Environmental Feedback">
+    - Real-time execution results
+    - Grounded decision making
+    - Reduced accuracy drift
+    - Continuous context updates
+  </Tab>
+</Tabs>
+
+## Key Features
+
+<AccordionGroup>
+  <Accordion title="High-Performance Inference">
+    <CardGroup cols={2}>
+      <Card title="Hardware Optimization">
+        - Optimized for modern hardware
+        - Blazing fast response times
+      </Card>
+      <Card title="Resource Management">
+        - Efficient resource utilization
+        - Support for latest model architectures
+      </Card>
+    </CardGroup>
+  </Accordion>
+  
+  <Accordion title="Development Tools">
+    <CardGroup cols={2}>
+      <Card title="SDK & Languages">
+        - Comprehensive SDK
+        - Multiple language support
+      </Card>
+      <Card title="Developer Experience">
+        - Extensive documentation
+        - Rich debugging tools
+      </Card>
+    </CardGroup>
+  </Accordion>
+  
+  <Accordion title="Enterprise Features">
+    <CardGroup cols={2}>
+      <Card title="Security">
+        - Role-based access control
+        - Data encryption
+      </Card>
+      <Card title="Compliance">
+        - Audit logging
+        - Compliance ready
+      </Card>
+    </CardGroup>
+  </Accordion>
+</AccordionGroup>
+
+## Platform Components
+
+<Steps>
+  <Step title="Truffle Desktop" icon="desktop">
+    Our flagship desktop application brings the power of AI to your local machine.
+  </Step>
+  
+  <Step title="Truffle SDK" icon="code">
+    Comprehensive development kit for building AI-powered applications.
+  </Step>
+  
+  <Step title="Truffle Orb" icon="microchip">
+    Custom hardware designed specifically for AI workloads.
+  </Step>
+</Steps>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Application Development" icon="code">
+    Build AI-powered applications with our comprehensive SDK and development tools.
+  </Card>
+  
+  <Card title="Enterprise Deployment" icon="building">
+    Deploy and manage AI solutions across your organization with enterprise-grade features.
+  </Card>
+  
+  <Card title="Research" icon="flask">
+    Accelerate AI research with optimized infrastructure and development tools.
+  </Card>
+  
+  <Card title="Edge Computing" icon="microchip">
+    Run AI workloads at the edge with our custom hardware solutions.
+  </Card>
+</CardGroup>
+
+## Getting Started
+
+<Steps>
+  <Step title="Installation">
+    Download and install Truffle Desktop from our website.
+  </Step>
+  
+  <Step title="Configuration">
+    Set up your development environment and API keys.
+  </Step>
+  
+  <Step title="Development">
+    Start building with our comprehensive SDK.
+  </Step>
+  
+  <Step title="Deployment">
+    Deploy your applications to production.
+  </Step>
+</Steps>
+
+## Resources
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="/docs"
+  >
+    Comprehensive guides and API reference
+  </Card>
+  <Card
+    title="Examples"
+    icon="code"
+    href="/examples"
+  >
+    Sample projects and tutorials
+  </Card>
+  <Card
+    title="Community"
+    icon="users"
+    href="/community"
+  >
+    Join our developer community
+  </Card>
+  <Card
+    title="Support"
+    icon="headset"
+    href="/support"
+  >
+    Get help when you need it
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Quick Start"
+    icon="play"
+    href="/quickstart"
+  >
+    Get up and running in minutes
+  </Card>
+  <Card
+    title="SDK Reference"
+    icon="book"
+    href="/sdk-reference"
+  >
+    Explore our SDK documentation
+  </Card>
+</CardGroup> 

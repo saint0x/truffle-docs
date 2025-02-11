@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: system-ui, sans-serif; font-size: 24px; fill: #374151; }
+    .arrow { stroke: #0D9373; stroke-width: 3; fill: none; }
+    .box { fill: white; stroke: #0D9373; stroke-width: 2; rx: 8; }
+    @media (prefers-color-scheme: dark) {
+      .text { fill: #E5E7EB; }
+      .box { fill: #1F2937; }
+    }
+  </style>
+  
+  <!-- Boxes -->
+  <rect class="box" x="50" y="150" width="150" height="80"/>
+  <rect class="box" x="250" y="150" width="150" height="80"/>
+  <rect class="box" x="450" y="150" width="150" height="80"/>
+  <rect class="box" x="650" y="150" width="150" height="80"/>
+  
+  <!-- Text -->
+  <text class="text" x="125" y="195" text-anchor="middle">User Request</text>
+  <text class="text" x="325" y="195" text-anchor="middle">Model Selection</text>
+  <text class="text" x="525" y="195" text-anchor="middle">Tool Execution</text>
+  <text class="text" x="725" y="195" text-anchor="middle">State Update</text>
+  
+  <!-- Arrows -->
+  <path class="arrow" d="M200 190 H250"/>
+  <path class="arrow" d="M400 190 H450"/>
+  <path class="arrow" d="M600 190 H650"/>
+  <path class="arrow" d="M725 150 C725 100, 125 100, 125 150"/>
+  
+  <!-- Arrow heads -->
+  <polygon points="245,190 255,185 255,195" fill="#0D9373"/>
+  <polygon points="445,190 455,185 455,195" fill="#0D9373"/>
+  <polygon points="645,190 655,185 655,195" fill="#0D9373"/>
+  <polygon points="125,145 120,155 130,155" fill="#0D9373"/>
+</svg> 

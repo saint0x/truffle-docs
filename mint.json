@@ -1,0 +1,73 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Truffle Documentation",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#5FADEB",
+    "light": "#7DBFEF",
+    "dark": "#3D91D4",
+    "background": {
+      "dark": "#111111",
+      "light": "#FFFFFF"
+    },
+    "anchors": {
+      "from": "#5FADEB",
+      "to": "#7DBFEF"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@truffle.ai"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://dashboard.truffle.ai"
+  },
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/truffle"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://blog.truffle.ai"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "pages/introduction",
+        "pages/quickstart"
+      ]
+    },
+    {
+      "group": "Core Concepts",
+      "pages": [
+        "pages/sdk-public",
+        "pages/inference",
+        "pages/macos-gui"
+      ]
+    },
+    {
+      "group": "Hardware & Infrastructure",
+      "pages": [
+        "pages/orb-hardware",
+        "pages/agent-registry"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/truffle_ai",
+    "github": "https://github.com/truffle-ai",
+    "linkedin": "https://www.linkedin.com/company/truffle-ai"
+  }
+} 

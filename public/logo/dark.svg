@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; }
+    .logo { fill: #07C983; }
+    .text { fill: #F9FAFB; }
+  </style>
+  
+  <!-- Logo Icon -->
+  <path class="logo" d="M20 8 C20 8, 32 16, 32 24 C32 32, 8 32, 8 24 C8 16, 20 8, 20 8 Z"/>
+  
+  <!-- Truffle Text -->
+  <text class="text" x="45" y="28">Truffle</text>
+</svg> 
