@@ -1,5 +1,7 @@
 # Truffle Documentation
 
+![Truffle Documentation](./screenshot.png)
+
 Truffle's technical documentation is built with [Mintlify](https://mintlify.com)
 
 ## Structure
@@ -17,9 +19,6 @@ Truffle's technical documentation is built with [Mintlify](https://mintlify.com)
 Run the documentation locally:
 
 ```bash
-# Install bun if you haven't already
-curl -fsSL https://bun.sh/install | bash
-
 # Install dependencies
 bun install
 
@@ -28,7 +27,3 @@ bun run dev
 ```
 
 Visit `http://localhost:3000` to see the documentation.
-
-## Deployment
-
-The documentation is automatically deployed when changes are pushed to the main branch. You can preview it at [docs.truffle.ai](https://docs.truffle.ai).
