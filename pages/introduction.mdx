@@ -8,21 +8,25 @@ title: 'Introduction to Truffle'
 
 ## Platform Overview
 
-<CardGroup cols={3}>
-  <Card title="Local Orb">
-    Custom hardware for secure AI inference.
-  </Card>
-  <Card title="Powerful Inference">
-    Agentic computing at ridiculous speeds.
-  </Card>
-  <Card title="Agent Registry">
-    Decentralized marketplace for agentic transactions.
-  </Card>
-</CardGroup>
+<div className="text-sm text-gray-500">
+  <CardGroup cols={3}>
+    <Card title="Local Orb">
+      Custom hardware for secure AI inference.
+    </Card>
+    <Card title="T.R.U.F.F.L.E">
+      Agentic computing at ridiculous speeds.
+    </Card>
+    <Card title="Tool SDK">
+      Easily build and deploy powerful agentic tools.
+    </Card>
+  </CardGroup>
+</div>
 
 ## Core Architecture
 
-At its heart, Truffle operates on four fundamental primitives:
+<div className="text-sm text-gray-500">
+  At its core, Truffle operates on four fundamental primitives:
+</div>
 
 <Frame type="glass" width="800" height="200">
   ```mermaid
@@ -54,53 +58,43 @@ At its heart, Truffle operates on four fundamental primitives:
     <div className="ml-4 text-sm text-gray-500">
       Specialized models optimized for different tasks and edge performance.
     </div>
-    
-    - Specialized models for different tasks
-    - Optimized for edge device performance
-    - Efficient resource utilization
   </Tab>
   
   <Tab title="Shared Context">
     <div className="ml-4 text-sm text-gray-500">
       Sophisticated memory and state management across the system.
     </div>
-    
-    - Cross-model memory management
-    - Persistent state tracking
-    - Efficient context sharing
   </Tab>
   
   <Tab title="Containerized Applications">
     <div className="ml-4 text-sm text-gray-500">
       Secure and isolated execution environments for tools.
     </div>
-    
-    - Sandboxed execution environments
-    - Tool-based interaction model
-    - Secure and isolated operations
   </Tab>
 </Tabs>
 
 ## The Agent Loop
 
-Unlike traditional language models, Truffle operates on an action-based paradigm:
+<div className="text-sm text-gray-500">
+  Unlike traditional language models, Truffle operates on an action-based paradigm:
+</div>
 
-<Frame type="glass" width="800" height="200">
+<Frame type="glass" width="100%" height="400">
   ```mermaid
   graph LR
-    classDef default fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,stroke-width:2px,rx:8
-    classDef connection stroke:#7DBFEF,stroke-width:2px
+    classDef default fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,stroke-width:2px,rx:8,padding:25px,fontSize:16px
+    classDef connection stroke:#7DBFEF,stroke-width:3px
     
     A[User Request] -->|Initial State| B[Model Selection]
     B -->|Action Choice| C[Tool Execution]
     C -->|Environment Update| D[State Transition]
     D -->|New Context| B
     
-    linkStyle default stroke:#7DBFEF,stroke-width:2px
-    style A fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
-    style B fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
-    style C fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
-    style D fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8
+    linkStyle default stroke:#7DBFEF,stroke-width:3px,stroke-dasharray:5
+    style A fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8,padding:25px,fontSize:16px
+    style B fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8,padding:25px,fontSize:16px
+    style C fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8,padding:25px,fontSize:16px
+    style D fill:#5FADEB,stroke:#3D91D4,color:#FFFFFF,rx:8,padding:25px,fontSize:16px
   ```
 </Frame>
 
@@ -239,15 +233,21 @@ Several key innovations power Truffle's capabilities:
 
 <Steps>
   <Step title="Truffle Desktop" icon="desktop">
-    Our flagship desktop application brings the power of AI to your local machine.
+    <div className="text-sm text-gray-500">
+      Our flagship desktop application brings the power of AI to your local machine.
+    </div>
   </Step>
   
   <Step title="Truffle SDK" icon="code">
-    Comprehensive development kit for building AI-powered applications.
+    <div className="text-sm text-gray-500">
+      Comprehensive development kit for building AI-powered applications.
+    </div>
   </Step>
   
   <Step title="Truffle Orb" icon="microchip">
-    Custom hardware designed specifically for AI workloads.
+    <div className="text-sm text-gray-500">
+      Custom hardware designed specifically for AI workloads.
+    </div>
   </Step>
 </Steps>
 

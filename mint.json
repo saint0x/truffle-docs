@@ -53,14 +53,14 @@
       "group": "Core Concepts",
       "pages": [
         "pages/sdk-public",
-        "pages/inference",
-        "pages/macos-gui"
+        "pages/inference"
       ]
     },
     {
       "group": "Hardware & Infrastructure",
       "pages": [
         "pages/orb-hardware",
+        "pages/macos-gui",
         "pages/agent-registry"
       ]
     }

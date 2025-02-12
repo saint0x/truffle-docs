@@ -4,13 +4,9 @@ description: "Truffle's Rather Unfortunately Fucking Fast LLM Engine"
 ---
 
 <div className="ml-4 text-sm text-gray-500">
-  The challenge with modern LLMs isn't just running them - it's running them efficiently. Traditional approaches often sacrifice performance for flexibility or vice versa. We took a different path: what if we optimized specifically for inference, and nothing else?
-</div>
-
-## Memory First, Questions Later
-
-<div className="ml-4 text-sm text-gray-500">
-  Memory management in LLMs is typically a major bottleneck. Most solutions either:
+  The challenge with modern LLMs isn't just running them - it's running them efficiently. Traditional approaches often sacrifice performance for flexibility or vice versa.
+  
+  Memory management is a large part of that bottleneck. Most solutions either:
 </div>
 
 <CardGroup cols={3}>
@@ -29,9 +25,11 @@ description: "Truffle's Rather Unfortunately Fucking Fast LLM Engine"
   We approached this differently. Every component in our pipeline is optimized for speed:
 </div>
 
-- Custom attention implementation that pushes hardware limits
-- Zero-copy token streaming for minimal overhead
-- Dynamic batching that adapts to real-world conditions
+<div className="ml-8 text-sm text-gray-500">
+  - Custom attention implementation that pushes hardware limits
+  - Zero-copy token streaming for minimal overhead
+  - Dynamic batching that adapts to real-world conditions
+</div>
 
 <Card>
   The result? Response times that feel impossibly fast.
@@ -40,24 +38,39 @@ description: "Truffle's Rather Unfortunately Fucking Fast LLM Engine"
 ## Architecture That Scales
 
 <div className="ml-4 text-sm text-gray-500">
-  What makes Truffle special isn't just its speed - it's how it achieves that speed. Our architecture is built on three core principles:
+Our architecture is built on three core principles:
 </div>
 
 <AccordionGroup>
   <Accordion title="Intelligent Memory Management">
-    The difference between good and great often comes down to cache efficiency. Our prefix cache system and page-based memory management allows us to be not just fast, but consistently fast.
+    <div className="ml-4 text-sm text-gray-500">
+      - The difference between good and great often comes down to cache efficiency
+      - Our prefix cache system ensures consistent performance
+      - Page-based memory management optimizes resource usage
+      - Designed for sustained high-speed operation
+    </div>
   </Accordion>
   
   <Accordion title="Hardware Awareness">
-    Whether running in our cloud infrastructure or on your Orb, the engine understands its environment and adapts accordingly. This approach pushes hardware output to its limits, safely.
+    <div className="ml-4 text-sm text-gray-500">
+      - Adapts to both cloud and Orb environments automatically
+      - Optimizes resource allocation based on available hardware
+      - Pushes hardware capabilities to their limits safely
+      - Real-time performance tuning and adjustment
+    </div>
   </Accordion>
   
   <Accordion title="Optimized Attention">
-    We've reimagined how attention computation works in inference scenarios. The results speak for themselves - though we'll let our speed tests do the talking.
+    <div className="ml-4 text-sm text-gray-500">
+      - Reimagined attention computation for inference
+      - Specialized optimizations for common patterns
+      - Reduced computational overhead
+      - Measurably faster response times
+    </div>
   </Accordion>
 </AccordionGroup>
 
 <Note>
   Truffle's inference engine is currently powering our MacOS client.
-  You can try it out for free HERE.
+  You can try it out for free <a href="https://itsalltruffles.com">HERE</a>.
 </Note> 
