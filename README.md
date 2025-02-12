@@ -23,7 +23,7 @@ Run the documentation locally:
 bun install
 
 # Start the development server
-bun run dev
+bun mintlify dev
 ```
 
 Visit `http://localhost:3000` to see the documentation.
