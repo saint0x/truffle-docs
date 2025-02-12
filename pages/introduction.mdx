@@ -1,5 +1,6 @@
 ---
 title: 'Introduction to Truffle'
+description: '<div className="text-xs text-gray-400">Jump to our <a className="text-[#5FADEB] hover:text-[#7DBFEF]" href="/pages/quickstart">Quick Start Guide</a> →</div>'
 ---
 
 <Card>
@@ -8,19 +9,25 @@ title: 'Introduction to Truffle'
 
 ## Platform Overview
 
-<div className="text-sm text-gray-500">
-  <CardGroup cols={3}>
-    <Card title="Local Orb">
+<Steps>
+  <Step title="Truffle Orb" icon="microchip">
+    <div className="text-sm text-gray-500">
       Custom hardware for secure AI inference.
-    </Card>
-    <Card title="T.R.U.F.F.L.E">
+    </div>
+  </Step>
+  
+  <Step title="T.R.U.F.F.L.E" icon="bolt">
+    <div className="text-sm text-gray-500">
       Agentic computing at ridiculous speeds.
-    </Card>
-    <Card title="Tool SDK">
+    </div>
+  </Step>
+  
+  <Step title="Truffle SDK" icon="code">
+    <div className="text-sm text-gray-500">
       Easily build and deploy powerful agentic tools.
-    </Card>
-  </CardGroup>
-</div>
+    </div>
+  </Step>
+</Steps>
 
 ## Core Architecture
 
@@ -125,204 +132,6 @@ title: 'Introduction to Truffle'
     </div>
   </Step>
 </Steps>
-
-## Model Architecture
-
-Truffle employs a mixture-of-models approach, with each model specialized for specific tasks:
-
-<AccordionGroup>
-  <Accordion title="Action and Reasoning">
-    - Core decision-making engine
-    - Action selection and planning
-    - Argument completion and validation
-    - Specialized sub-behaviors for different tasks
-  </Accordion>
-  
-  <Accordion title="Vision Processing">
-    - Image interpretation and analysis
-    - OCR capabilities
-    - Visual content understanding
-    - Multi-modal integration
-  </Accordion>
-  
-  <Accordion title="Generative UI">
-    - Dynamic interface generation
-    - Task and action titling
-    - Execution summaries
-    - Real-time classification
-  </Accordion>
-</AccordionGroup>
-
-## Technical Innovation
-
-Several key innovations power Truffle's capabilities:
-
-<Tabs>
-  <Tab title="Action-Based Processing">
-    ```python
-    # Traditional LLM approach
-    response = model.generate(prompt)
-
-    # Truffle's action-based approach
-    while not task.completed:
-        action = model.select_next_action(context)
-        result = environment.execute(action)
-        context.update(result)
-    ```
-  </Tab>
-  
-  <Tab title="Optimized Token Usage">
-    - Special tokens for high-level actions
-    - Constrained classification space
-    - Jump-forward decoding for structured output
-    - Reduced semantic collisions
-  </Tab>
-  
-  <Tab title="Environmental Feedback">
-    - Real-time execution results
-    - Grounded decision making
-    - Reduced accuracy drift
-    - Continuous context updates
-  </Tab>
-</Tabs>
-
-## Key Features
-
-<AccordionGroup>
-  <Accordion title="High-Performance Inference">
-    <CardGroup cols={2}>
-      <Card title="Hardware Optimization">
-        - Optimized for modern hardware
-        - Blazing fast response times
-      </Card>
-      <Card title="Resource Management">
-        - Efficient resource utilization
-        - Support for latest model architectures
-      </Card>
-    </CardGroup>
-  </Accordion>
-  
-  <Accordion title="Development Tools">
-    <CardGroup cols={2}>
-      <Card title="SDK & Languages">
-        - Comprehensive SDK
-        - Multiple language support
-      </Card>
-      <Card title="Developer Experience">
-        - Extensive documentation
-        - Rich debugging tools
-      </Card>
-    </CardGroup>
-  </Accordion>
-  
-  <Accordion title="Enterprise Features">
-    <CardGroup cols={2}>
-      <Card title="Security">
-        - Role-based access control
-        - Data encryption
-      </Card>
-      <Card title="Compliance">
-        - Audit logging
-        - Compliance ready
-      </Card>
-    </CardGroup>
-  </Accordion>
-</AccordionGroup>
-
-## Platform Components
-
-<Steps>
-  <Step title="Truffle Desktop" icon="desktop">
-    <div className="text-sm text-gray-500">
-      Our flagship desktop application brings the power of AI to your local machine.
-    </div>
-  </Step>
-  
-  <Step title="Truffle SDK" icon="code">
-    <div className="text-sm text-gray-500">
-      Comprehensive development kit for building AI-powered applications.
-    </div>
-  </Step>
-  
-  <Step title="Truffle Orb" icon="microchip">
-    <div className="text-sm text-gray-500">
-      Custom hardware designed specifically for AI workloads.
-    </div>
-  </Step>
-</Steps>
-
-## Use Cases
-
-<CardGroup cols={2}>
-  <Card title="Application Development" icon="code">
-    Build AI-powered applications with our comprehensive SDK and development tools.
-  </Card>
-  
-  <Card title="Enterprise Deployment" icon="building">
-    Deploy and manage AI solutions across your organization with enterprise-grade features.
-  </Card>
-  
-  <Card title="Research" icon="flask">
-    Accelerate AI research with optimized infrastructure and development tools.
-  </Card>
-  
-  <Card title="Edge Computing" icon="microchip">
-    Run AI workloads at the edge with our custom hardware solutions.
-  </Card>
-</CardGroup>
-
-## Getting Started
-
-<Steps>
-  <Step title="Installation">
-    Download and install Truffle Desktop from our website.
-  </Step>
-  
-  <Step title="Configuration">
-    Set up your development environment and API keys.
-  </Step>
-  
-  <Step title="Development">
-    Start building with our comprehensive SDK.
-  </Step>
-  
-  <Step title="Deployment">
-    Deploy your applications to production.
-  </Step>
-</Steps>
-
-## Resources
-
-<CardGroup cols={2}>
-  <Card
-    title="Documentation"
-    icon="book"
-    href="/docs"
-  >
-    Comprehensive guides and API reference
-  </Card>
-  <Card
-    title="Examples"
-    icon="code"
-    href="/examples"
-  >
-    Sample projects and tutorials
-  </Card>
-  <Card
-    title="Community"
-    icon="users"
-    href="/community"
-  >
-    Join our developer community
-  </Card>
-  <Card
-    title="Support"
-    icon="headset"
-    href="/support"
-  >
-    Get help when you need it
-  </Card>
-</CardGroup>
 
 ## Next Steps
 
